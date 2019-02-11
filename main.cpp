@@ -12,28 +12,28 @@ using namespace std;
 //start of 0uts1de's library
 
 int cin_int_arr(vector<int>& arr){
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         cin >> arr.at(i);
     }
     return 0;
 }
 
 int cin_int_arr(vector<int>& arr, int n){    //overload
-    for (int i = 0; i < n; ++i){
+    for (unsigned int i = 0; i < n; ++i) {
         cin >> arr.at(i);
     }
     return 0;
 }
 
 int cin_double_arr(vector<double>& arr){
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         cin >> arr.at(i);
     }
     return 0;
 }
 
 int cin_double_arr(vector<double>& arr, int n){    //overload
-    for (int i = 0; i < n; ++i){
+    for (unsigned int i = 0; i < n; ++i) {
         cin >> arr.at(i);
     }
     return 0;
@@ -41,28 +41,28 @@ int cin_double_arr(vector<double>& arr, int n){    //overload
 
 
 int cout_int_arr(vector<int>& arr){
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         cout << arr.at(i) << endl;
     }
     return 0;
 }
 
 int cout_int_arr(vector<int>& arr, int n){    //overload
-    for (int i = 0; i < n; ++i){
+    for (unsigned int i = 0; i < n; ++i) {
         cout << arr.at(i) << endl;
     }
     return 0;
 }
 
 int cout_double_arr(vector<double>& arr){
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         cout << arr.at(i) << endl;
     }
     return 0;
 }
 
 int cout_double_arr(vector<double>& arr, int n){    //overload
-    for (int i = 0; i < n; ++i){
+    for (unsigned int i = 0; i < n; ++i) {
         cout << arr.at(i) << endl;
     }
     return 0;
@@ -71,7 +71,7 @@ int cout_double_arr(vector<double>& arr, int n){    //overload
 
 int max_int_arr(std::vector<int>& arr){    //data mode
     int maxVal = INT_MIN;       //min of int
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         if (arr.at(i) > maxVal){
             maxVal = arr.at(i);
         }
@@ -82,7 +82,7 @@ int max_int_arr(std::vector<int>& arr){    //data mode
 int max_int_arr(std::vector<int>& arr, int mode){    //overload index mode
     int maxVal = INT_MIN;       //min of int
     int maxIndex = 0;
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         if (arr.at(i) > maxVal){
             maxVal = arr.at(i);
             maxIndex = i;
@@ -93,7 +93,7 @@ int max_int_arr(std::vector<int>& arr, int mode){    //overload index mode
 
 double max_double_arr(std::vector<double>& arr){    //data mode
     double maxVal = -DBL_MAX;       //min of double
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         if (arr.at(i) > maxVal){
             maxVal = arr.at(i);
         }
@@ -104,7 +104,7 @@ double max_double_arr(std::vector<double>& arr){    //data mode
 int max_double_arr(std::vector<double>& arr, int mode){    //overload index mode
     double maxVal = -DBL_MAX;       //min of double
     int maxIndex = 0;
-    for (int i = 0; i < arr.size(); ++i){
+    for (unsigned int i = 0; i < arr.size(); ++i) {
         if (arr.at(i) > maxVal){
             maxVal = arr.at(i);
             maxIndex = i;
@@ -116,6 +116,13 @@ int max_double_arr(std::vector<double>& arr, int mode){    //overload index mode
 //end of 0uts1de's library
 
 int main(){
-    
+    int n;
+    vector<int> s(0);
+    //cin >> n;
+
+    s.push_back(1);
+    s.push_back(23);
+    cout_int_arr(s);
+
     return 0;
 }
