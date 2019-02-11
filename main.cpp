@@ -11,101 +11,81 @@ using namespace std;
 
 //start of 0uts1de's library
 
-int cin_int_arr(vector<int>& arr){
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        cin >> arr.at(i);
+int cin_int_arr(vector<int> &arr) {
+    for (int &i : arr) {
+        cin >> i;
     }
     return 0;
 }
 
-int cin_int_arr(vector<int>& arr, int n){    //overload
-    for (unsigned int i = 0; i < n; ++i) {
-        cin >> arr.at(i);
-    }
-    return 0;
-}
-
-int cin_double_arr(vector<double>& arr){
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        cin >> arr.at(i);
-    }
-    return 0;
-}
-
-int cin_double_arr(vector<double>& arr, int n){    //overload
-    for (unsigned int i = 0; i < n; ++i) {
-        cin >> arr.at(i);
+int cin_double_arr(vector<double> &arr) {
+    for (double &i : arr) {
+        cin >> i;
     }
     return 0;
 }
 
 
-int cout_int_arr(vector<int>& arr){
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        cout << arr.at(i) << endl;
+int cout_int_arr(vector<int> &arr, bool addNewline = true) {
+    for (int i : arr) {
+        if (addNewline) {
+            cout << i << endl;
+        } else {
+            cout << i << flush;
+        }
     }
     return 0;
 }
 
-int cout_int_arr(vector<int>& arr, int n){    //overload
-    for (unsigned int i = 0; i < n; ++i) {
-        cout << arr.at(i) << endl;
-    }
-    return 0;
-}
+int cout_double_arr(vector<double> &arr, bool addNewline = true) {
+    for (double i : arr) {
+        if (addNewline) {
+            cout << i << endl;
+        } else {
+            cout << i << flush;
+        }
 
-int cout_double_arr(vector<double>& arr){
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        cout << arr.at(i) << endl;
-    }
-    return 0;
-}
-
-int cout_double_arr(vector<double>& arr, int n){    //overload
-    for (unsigned int i = 0; i < n; ++i) {
-        cout << arr.at(i) << endl;
     }
     return 0;
 }
 
 
-int max_int_arr(std::vector<int>& arr){    //data mode
+int max_int_arr(std::vector<int> &arr, bool returnValue = true) {    //Value mode and Index mode
     int maxVal = INT_MIN;       //min of int
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        if (arr.at(i) > maxVal){
-            maxVal = arr.at(i);
+    int maxIndex = 0;
+    if (returnValue) {
+        for (int i : arr) {
+            if (i > maxVal) {
+                maxVal = i;
+            }
+        }
+        return maxVal;
+    } else {
+        for (unsigned int i = 0; i < arr.size(); ++i) {
+            if (arr.at(i) > maxVal) {
+                maxVal = arr.at(i);
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
+    }
+}
+
+double max_double_arr(std::vector<double> &arr) {    //data mode
+    double maxVal = -DBL_MAX;       //min of double
+    for (double i : arr) {
+        if (i > maxVal) {
+            maxVal = i;
         }
     }
     return maxVal;
 }
 
-int max_int_arr(std::vector<int>& arr, int mode){    //overload index mode
-    int maxVal = INT_MIN;       //min of int
-    int maxIndex = 0;
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        if (arr.at(i) > maxVal){
-            maxVal = arr.at(i);
-            maxIndex = i;
-        }
-    }
-    return maxIndex;
-}
-
-double max_double_arr(std::vector<double>& arr){    //data mode
-    double maxVal = -DBL_MAX;       //min of double
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        if (arr.at(i) > maxVal){
-            maxVal = arr.at(i);
-        }
-    }
-    return maxVal;
-}
-
-int max_double_arr(std::vector<double>& arr, int mode){    //overload index mode
+int max_double_arr(std::vector<double> &arr, int mode) {    //overload index mode
     double maxVal = -DBL_MAX;       //min of double
     int maxIndex = 0;
     for (unsigned int i = 0; i < arr.size(); ++i) {
-        if (arr.at(i) > maxVal){
+        if (arr.at(i) > maxVal) {
             maxVal = arr.at(i);
             maxIndex = i;
         }
@@ -115,14 +95,14 @@ int max_double_arr(std::vector<double>& arr, int mode){    //overload index mode
 
 //end of 0uts1de's library
 
-int main(){
+int main() {
     int n;
     vector<int> s(0);
-    //cin >> n;
+    cin >> n;
 
     s.push_back(1);
     s.push_back(23);
-    cout_int_arr(s);
+    cout_int_arr(s, false);
 
     return 0;
 }
