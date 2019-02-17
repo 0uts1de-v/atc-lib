@@ -24,12 +24,9 @@ T cout_arr(vector<T> &arr, bool insertNewLine = true) {
 	if (insertNewLine) {
 		for (const int &i : arr) {
 			cout << i << endl;
-		}
-	} else {
-		for (const &i : arr) {
+		} else {
 			cout << i << flush;
 		}
-	}
 	return 0;
 }
 
