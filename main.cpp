@@ -13,24 +13,24 @@ using namespace std;
 
 template <typename T>
 T cin_arr(vector<T> &arr) {
-	for (int &i : arr) {
-		cin >> i;
-	}
-	return 0;
+    for (int &i : arr) {
+        cin >> i;
+    }
+    return 0;
 }
 
 template <typename T>
 T cout_arr(vector<T> &arr, bool insertNewLine = true) {
-	if (insertNewLine) {
-		for (const int &i : arr) {
-			cout << i << endl;
-		}
-	} else {
-		for (const &i : arr) {
-			cout << i << flush;
-		}
-	}
-	return 0;
+    if (insertNewLine) {
+        for (const int &i : arr) {
+            cout << i << endl;
+        }
+    } else {
+        for (const &i : arr) {
+            cout << i << flush;
+        }
+    }
+    return 0;
 }
 
 
@@ -82,8 +82,8 @@ int max_double_arr(std::vector<double> &arr, int mode) {    //overload index mod
 int main() {
     int n;
     cin >> n;
-	vector<int> a(n);
-	cin_arr(a);
-	cout_arr(a);
+    vector<int> a(n);
+    cin_arr(a);
+    cout_arr(a);
     return 0;
 }
