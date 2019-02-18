@@ -8,82 +8,50 @@
 #include <cfloat>
 
 using namespace std;
-
-//start of 0uts1de's library
+using ll = long long int;
 
 template <typename T>
 T cin_arr(vector<T> &arr) {
-    for (int &i : arr) {
+    for (auto &i : arr) {
         cin >> i;
     }
     return 0;
 }
 
 template <typename T>
-T cout_arr(vector<T> &arr, bool insertNewLine = true) {
+T cout_arr(vector<T> arr, bool insertNewLine = true) {
     if (insertNewLine) {
-        for (const int &i : arr) {
+        for (const auto &i : arr) {
             cout << i << endl;
         }
     } else {
-        for (const &i : arr) {
+        for (const auto &i : arr) {
             cout << i << flush;
         }
     }
     return 0;
 }
 
-
-int max_int_arr(std::vector<int> &arr, bool returnValue = true) {    //Value mode and Index mode
-    int maxVal = INT_MIN;       //min of int
-    int maxIndex = 0;
-    if (returnValue) {
-        for (int i : arr) {
-            if (i > maxVal) {
-                maxVal = i;
-            }
-        }
-        return maxVal;
-    } else {
-        for (unsigned int i = 0; i < arr.size(); ++i) {
-            if (arr.at(i) > maxVal) {
-                maxVal = arr.at(i);
-                maxIndex = i;
-            }
-        }
-        return maxIndex;
-    }
+template <typename T>
+ll min_arr(std::vector<T> arr) {
+    auto iter = min_element(arr.begin(), arr.end());
+    ll index = distance(arr.begin(), iter);
+    return index;
 }
 
-double max_double_arr(std::vector<double> &arr) {    //data mode
-    double maxVal = -DBL_MAX;       //min of double
-    for (double i : arr) {
-        if (i > maxVal) {
-            maxVal = i;
-        }
-    }
-    return maxVal;
+template <typename T>
+ll max_arr(std::vector<T> arr) {
+    auto iter = max_element(arr.begin(), arr.end());
+    ll index = distance(arr.begin(), iter);
+    return index;
 }
-
-int max_double_arr(std::vector<double> &arr, int mode) {    //overload index mode
-    double maxVal = -DBL_MAX;       //min of double
-    int maxIndex = 0;
-    for (unsigned int i = 0; i < arr.size(); ++i) {
-        if (arr.at(i) > maxVal) {
-            maxVal = arr.at(i);
-            maxIndex = i;
-        }
-    }
-    return maxIndex;
-}
-
-//end of 0uts1de's library
 
 int main() {
     int n;
     cin >> n;
-    vector<int> a(n);
+    vector<double> a(n);
     cin_arr(a);
     cout_arr(a);
+    cout << "max:" << a.at(max_arr(a)) << endl;
     return 0;
 }
