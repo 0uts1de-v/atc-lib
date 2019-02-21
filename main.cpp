@@ -10,6 +10,8 @@
 using namespace std;
 using ll = long long int;
 
+const ll MOD = 1000000007;
+
 template <typename T>
 T cin_vec(vector<T> &vec) {
     for (auto &i : vec) {
@@ -53,5 +55,6 @@ int main() {
     cin_vec(a);
     cout_vec(a);
     cout << "max:" << a.at(max_vec(a)) << endl;
+    cout << MOD << endl;
     return 0;
 }
