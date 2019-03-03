@@ -13,7 +13,7 @@ using ll = long long int;
 const ll MOD = 1000000007;
 
 template <typename T>
-T cin_vec(vector<T> &vec) {
+int cin_vec(vector<T> &vec) {
     for (auto &i : vec) {
         cin >> i;
     }
@@ -21,7 +21,7 @@ T cin_vec(vector<T> &vec) {
 }
 
 template <typename T>
-T cout_vec(vector<T> vec, bool insertNewLine = true) {
+int cout_vec(vector<T> vec, bool insertNewLine = true) {
     if (insertNewLine) {
         for (const auto &i : vec) {
             cout << i << endl;
